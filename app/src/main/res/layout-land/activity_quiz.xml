@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/background"
+        tools:context=".QuizActivity">
+
+    <TextView
+            android:id="@+id/statement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/first_statement"
+            android:textColor="@color/textColor"
+            android:textSize="25sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="50dp"/>
+
+    <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal|center_vertical">
+
+        <Button
+                android:id="@+id/yes_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"
+                style="?android:attr/buttonBarButtonStyle"/>
+        <Button
+                android:id="@+id/no_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"
+                style="?android:attr/buttonBarButtonStyle"/>
+    </LinearLayout>
+
+    <ImageButton
+            android:id="@+id/prev_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_left"
+            android:layout_gravity="bottom|start"
+            android:contentDescription="@string/prev"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+    <ImageButton
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/arrow_right"
+            android:contentDescription="@string/next"
+            style="?android:attr/buttonBarButtonStyle"/>
+</FrameLayout>
+
