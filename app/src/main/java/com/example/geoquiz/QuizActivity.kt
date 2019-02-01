@@ -49,16 +49,17 @@ class QuizActivity : AppCompatActivity() {
 
         Log.d(TAG, "onCreate(Bundle) called")
 
+        for (i in 0 until question.size)
+            checkExistAnswer.add(0)
+
         if (savedInstanceState != null) {
             currentIndex = savedInstanceState.getInt(KEY_INDEX, 0)
             countAnswer = savedInstanceState.getInt(KEY_ANSWER, 0)
             countTrueAnswer = savedInstanceState.getInt(KEY_TRUE_ANSWER, 0)
             countCheat = savedInstanceState.getInt(KEY_CHEATS, 0)
+            checkExistAnswer = savedInstanceState.getIntegerArrayList(KEY_EXISTS_ANSWER)!!
         }
 
-        Log.d("LOL", checkExistAnswer.toString())
-        for (i in 0 until question.size)
-            checkExistAnswer.add(0)
 
         trueButton = find<Button>(R.id.yes_button)
         falseButton = find<Button>(R.id.no_button)
@@ -131,6 +132,7 @@ class QuizActivity : AppCompatActivity() {
     }
 
     private fun updateQuestion(string: String) {
+        Log.d(TAG, countAnswer.toString() + checkExistAnswer.toString())
         when {
             countAnswer >= question.size -> toast("It's a last question")
             string == "+" -> do {
@@ -161,6 +163,8 @@ class QuizActivity : AppCompatActivity() {
             toast("Correct!!!")
             countTrueAnswer++
         } else toast("Incorrect(")
+
+        Log.d(TAG, countAnswer.toString() + checkExistAnswer.toString())
 
         if (checkNumberAnswer()) {
             toast("That's all!")

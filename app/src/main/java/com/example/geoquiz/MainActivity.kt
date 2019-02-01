@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         startGame.setOnClickListener {
             startActivity<QuizActivity> ()
+            finish()
         }
     }
 }
