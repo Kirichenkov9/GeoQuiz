@@ -11,4 +11,6 @@
     <string name="next">Next</string>
     <string name="prev">Prev</string>
     <string name="start_game">Start Game</string>
+    <string name="warning">Are you sure you want to do this?</string>
+    <string name="show_answer">Show answer</string>
 </resources>

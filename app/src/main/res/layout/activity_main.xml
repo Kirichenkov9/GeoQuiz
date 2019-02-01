@@ -24,6 +24,14 @@
             android:layout_height="wrap_content"
             android:text="@string/start_game"
             android:id="@+id/start_game"
-            style="@style/Button"/>
+            android:textColor="@color/textColor"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+    <TextView
+            android:id="@+id/current_API"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/colorAccent"/>
 
 </LinearLayout>

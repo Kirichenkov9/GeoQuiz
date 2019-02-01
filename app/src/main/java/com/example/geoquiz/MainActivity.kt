@@ -1,5 +1,6 @@
 package com.example.geoquiz
 
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -20,9 +21,12 @@ class MainActivity : AppCompatActivity() {
 
         val textResult = find<TextView>(R.id.result)
         val startGame = find<Button>(R.id.start_game)
+        val API = find<TextView>(R.id.current_API)
+
+        API.text = "API: " + Build.VERSION.SDK_INT.toString()
 
         if (result != 0F)
-            textResult.text = "Your result: $result%"
+            textResult.text = "Your result:  $result%"
 
         startGame.setOnClickListener {
             startActivity<QuizActivity> ()
