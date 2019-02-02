@@ -132,9 +132,9 @@ class QuizActivity : AppCompatActivity() {
     }
 
     private fun updateQuestion(string: String) {
-        Log.d(TAG, countAnswer.toString() + checkExistAnswer.toString())
+        Log.d(TAG, countAnswer.toString())
         when {
-            countAnswer >= question.size -> toast("It's a last question")
+            countAnswer == question.size - 1 -> toast("It's a last question")
             string == "+" -> do {
                 currentIndex = (currentIndex + 1) % question.size
             } while (checkExistAnswer[currentIndex] == 1)
